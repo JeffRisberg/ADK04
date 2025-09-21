@@ -1,8 +1,7 @@
 ## ADK04
 MCP example
 
-based on https://google.github.io/adk-docs/tutorials/agent-team/
-
+based on https://google.github.io/adk-docs/tools/mcp-tools/
 ## Set up virtual environment
 
 ```
@@ -27,13 +26,7 @@ adk web
 Then run the app at command line with:
 
 ```bash
-adk run multi_tool_agent
-```
-
-Then run as server (go to localhost:8000/docs to see the API docs):
-
-```
-python server.py
+adk run mcp_agent
 ```
 
 # Close with deactivation of venv
