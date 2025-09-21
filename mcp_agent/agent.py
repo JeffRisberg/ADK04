@@ -11,7 +11,7 @@ from mcp import StdioServerParameters
 # assuming '/path/to/your/folder' is in the same directory as agent.py.
 # REPLACE THIS with an actual absolute path if needed for your setup.
 TARGET_FOLDER_PATH = os.path.join(os.path.dirname(os.path.abspath(__file__)), "../mcp")
-print(f"Using TARGET_FOLDER_PATH: {TARGET_FOLDER_PATH}")
+print(f"Using TARGET_FOLDER_PATH: {os.path.abspath(TARGET_FOLDER_PATH)}")
 
 # Ensure TARGET_FOLDER_PATH is an absolute path for the MCP server.
 # If you created ./adk_agent_samples/mcp_agent/your_folder,
