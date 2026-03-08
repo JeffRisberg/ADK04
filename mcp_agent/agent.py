@@ -1,7 +1,7 @@
 # ./adk_agent_samples/mcp_agent/agent.py
 import os # Required for path operations
 from google.adk.agents import LlmAgent
-from google.adk.tools.mcp_tool.mcp_toolset import MCPToolset
+from google.adk.tools.mcp_tool.mcp_toolset import McpToolset
 from google.adk.tools.mcp_tool.mcp_session_manager import StdioConnectionParams
 from mcp import StdioServerParameters
 
@@ -21,21 +21,17 @@ root_agent = LlmAgent(
     name='filesystem_assistant_agent',
     instruction='Help the user manage their files. You can list files, read files, etc.',
     tools=[
-        MCPToolset(
+        McpToolset(
             connection_params=StdioConnectionParams(
-                server_params = StdioServerParameters(
+                server_params=StdioServerParameters(
                     command='npx',
                     args=[
-                        "-y",  # Argument for npx to auto-confirm install
+                        "-y",
                         "@modelcontextprotocol/server-filesystem",
-                        # IMPORTANT: This MUST be an ABSOLUTE path to a folder the
-                        # npx process can access.
-                        # Replace with a valid absolute path on your system.
-                        # For example: "/Users/youruser/accessible_mcp_files"
-                        # or use a dynamically constructed absolute path:
                         os.path.abspath(TARGET_FOLDER_PATH),
                     ],
                 ),
+                timeout=30,
             ),
             # Optional: Filter which tools from the MCP server are exposed
             # tool_filter=['list_directory', 'read_file']

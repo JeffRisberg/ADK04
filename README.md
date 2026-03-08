@@ -29,6 +29,13 @@ Then run the app at command line with:
 adk run mcp_agent
 ```
 
+Instructions
+
+```
+select the mcp_agent agent
+what files are in the mcp directory
+```
+
 # Close with deactivation of venv
 
 ```
