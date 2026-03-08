@@ -19,3 +19,6 @@ build/
 .env
 sessions.db
 
+.idea/copilot.data.migration.ask2agent.xml
+mcp/.adk/session.db
+mcp_agent/.adk/session.db
